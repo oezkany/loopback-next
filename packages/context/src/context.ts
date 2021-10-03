@@ -128,7 +128,7 @@ export class Context extends EventEmitter {
     // The number of listeners can grow with the number of child contexts
     // For example, each request can add a listener to the RestServer and the
     // listener is removed when the request processing is finished.
-    // See https://github.com/strongloop/loopback-next/issues/4363
+    // See https://github.com/loopbackio/loopback-next/issues/4363
     this.setMaxListeners(Infinity);
     if (typeof _parent === 'string') {
       name = _parent;
@@ -441,12 +441,14 @@ export class Context extends EventEmitter {
    * Create a view of the context chain with the given binding filter
    * @param filter - A function to match bindings
    * @param comparator - A function to sort matched bindings
+   * @param options - Resolution options
    */
   createView<T = unknown>(
     filter: BindingFilter,
     comparator?: BindingComparator,
+    options?: Omit<ResolutionOptions, 'session'>,
   ) {
-    const view = new ContextView<T>(this, filter, comparator);
+    const view = new ContextView<T>(this, filter, comparator, options);
     view.open();
     return view;
   }

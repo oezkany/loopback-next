@@ -59,6 +59,7 @@ const EXAMPLES = {
   'todo-jwt': g.f('A modified Todo application with JWT authentication.'),
   webpack: g.f('An example to bundle @loopback/core using webpack.'),
   graphql: g.f('An example to demonstrate GraphQL integration.'),
+  socketio: g.f('A basic implementation of Socket.IO'),
 };
 Object.freeze(EXAMPLES);
 
@@ -147,7 +148,7 @@ module.exports = class extends BaseGenerator {
     }
 
     // Recent versions of examples are using project references inside monorepo,
-    // see https://github.com/strongloop/loopback-next/pull/5155
+    // see https://github.com/loopbackio/loopback-next/pull/5155
     // We must switch to standalone mode (no project references) when the code
     // was checked out outside of our monorepo.
     const tsconfigContent = await fs.readJson(tsconfig);

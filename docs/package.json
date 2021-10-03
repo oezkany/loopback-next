@@ -1,7 +1,7 @@
 {
   "name": "@loopback/docs",
   "description": "Documentation files rendered at [https://loopback.io](https://loopback.io)",
-  "version": "3.25.0",
+  "version": "3.27.0",
   "keywords": [
     "LoopBack",
     "docs"
@@ -9,10 +9,10 @@
   "license": "MIT",
   "author": "IBM Corp.",
   "copyright.owner": "IBM Corp.",
-  "homepage": "https://github.com/strongloop/loopback-next/tree/master/docs",
+  "homepage": "https://github.com/loopbackio/loopback-next/tree/master/docs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
     "directory": "docs"
   },
   "engines": {
@@ -33,9 +33,9 @@
   ],
   "dependencies": {
     "fs-extra": "^10.0.0",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@loopback/build": "^6.4.0"
+    "@loopback/build": "^7.0.1"
   }
 }

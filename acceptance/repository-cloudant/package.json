@@ -1,7 +1,7 @@
 {
   "name": "@loopback/test-repository-cloudant",
   "description": "Acceptance tests for `@loopback/repository` + `loopback-connector-cloudant`",
-  "version": "2.4.0",
+  "version": "2.4.3",
   "private": true,
   "license": "MIT",
   "main": "dist/index.js",
@@ -10,7 +10,7 @@
   "copyright.owner": "IBM Corp.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
     "directory": "acceptance/repository-cloudant"
   },
   "engines": {
@@ -32,19 +32,19 @@
     "!*/__tests__"
   ],
   "devDependencies": {
-    "@loopback/build": "^6.4.0",
-    "@loopback/eslint-config": "^10.2.0",
-    "@loopback/repository": "^3.6.0",
-    "@loopback/repository-tests": "^0.18.0",
+    "@loopback/build": "^7.0.1",
+    "@loopback/eslint-config": "^11.0.1",
+    "@loopback/repository": "^3.7.2",
+    "@loopback/repository-tests": "^0.18.3",
     "@types/node": "^10.17.60",
-    "async": "^3.2.0",
-    "chalk": "^4.1.1",
-    "debug": "^4.3.1",
-    "dockerode": "^3.3.0",
+    "async": "^3.2.1",
+    "chalk": "^4.1.2",
+    "debug": "^4.3.2",
+    "dockerode": "^3.3.1",
     "lodash": "^4.17.21",
     "loopback-connector-cloudant": "2.5.0",
     "ms": "2.1.3",
-    "tslib": "^2.2.0",
-    "typescript": "~4.3.2"
+    "tslib": "^2.3.1",
+    "typescript": "~4.4.3"
   }
 }

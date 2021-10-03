@@ -1,7 +1,7 @@
 {
   "name": "@loopback/example-greeting-app",
   "description": "An example greeting application for LoopBack 4",
-  "version": "2.4.0",
+  "version": "3.0.1",
   "keywords": [
     "loopback",
     "loopback-application"
@@ -11,14 +11,14 @@
   "types": "dist/index.d.ts",
   "author": "IBM Corp.",
   "copyright.owner": "IBM Corp.",
-  "homepage": "https://github.com/strongloop/loopback-next/tree/master/examples/greeter-extension",
+  "homepage": "https://github.com/loopbackio/loopback-next/tree/master/examples/greeter-extension",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
     "directory": "examples/greeting-app"
   },
   "bugs": {
-    "url": "https://github.com/strongloop/loopback-next/issues"
+    "url": "https://github.com/loopbackio/loopback-next/issues"
   },
   "engines": {
     "node": "12 || 14 || 16"
@@ -48,21 +48,21 @@
     "access": "public"
   },
   "dependencies": {
-    "@loopback/boot": "^3.4.0",
-    "@loopback/core": "^2.16.0",
-    "@loopback/example-greeter-extension": "^2.3.0",
-    "@loopback/rest": "^9.3.0",
-    "chalk": "^4.1.1",
-    "debug": "^4.3.1",
-    "tslib": "^2.2.0"
+    "@loopback/boot": "^3.4.3",
+    "@loopback/core": "^2.17.0",
+    "@loopback/example-greeter-extension": "^3.0.1",
+    "@loopback/rest": "^10.0.1",
+    "chalk": "^4.1.2",
+    "debug": "^4.3.2",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@loopback/build": "^6.4.0",
-    "@loopback/eslint-config": "^10.2.0",
-    "@loopback/testlab": "^3.4.0",
-    "@types/debug": "4.1.5",
+    "@loopback/build": "^7.0.1",
+    "@loopback/eslint-config": "^11.0.1",
+    "@loopback/testlab": "^3.4.3",
+    "@types/debug": "4.1.7",
     "@types/node": "^10.17.60",
-    "eslint": "^7.28.0",
-    "typescript": "~4.3.2"
+    "eslint": "^7.32.0",
+    "typescript": "~4.4.3"
   }
 }

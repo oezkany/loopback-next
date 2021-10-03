@@ -67,7 +67,7 @@ export interface ResolverFunction {
 /**
  * An object to provide metadata for `@inject`
  */
-export interface InjectionMetadata extends ResolutionOptions {
+export interface InjectionMetadata extends Omit<ResolutionOptions, 'session'> {
   /**
    * Name of the decorator function, such as `@inject` or `@inject.setter`.
    * It's usually set by the decorator implementation.
@@ -510,7 +510,7 @@ function shouldSkipBaseConstructorInjection(targetClass: Object) {
   const classDef = targetClass.toString();
   return (
     /*
-     * See https://github.com/strongloop/loopback-next/issues/2946
+     * See https://github.com/loopbackio/loopback-next/issues/2946
      * A class decorator can return a new constructor that mixes in
      * additional properties/methods.
      *
@@ -539,7 +539,7 @@ function shouldSkipBaseConstructorInjection(targetClass: Object) {
       /\s+constructor\s*\(\s*\)\s*\{\s*super\(\.\.\.arguments\)/,
     ) &&
     /*
-     * See https://github.com/strongloop/loopback-next/issues/1565
+     * See https://github.com/loopbackio/loopback-next/issues/1565
      *
      * @example
      * ```ts

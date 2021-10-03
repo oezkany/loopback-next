@@ -8,7 +8,7 @@
   "copyright.owner": "IBM Corp.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git"
+    "url": "https://github.com/loopbackio/loopback-next.git"
   },
   "engines": {
     "node": "12 || 14 || 16",
@@ -34,7 +34,7 @@
     "version": "npm run update-template-deps && npm run update-package-deps && npm run save-cli-metadata",
     "outdated": "npm outdated --depth 0 && lerna exec --no-bail \"npm outdated --depth 0\"",
     "tsdocs": "lerna run --scope @loopback/tsdocs build:tsdocs",
-    "coverage:ci": "node packages/build/bin/run-nyc report --reporter=text-lcov | coveralls",
+    "coverage:ci": "node packages/build/bin/run-nyc report --reporter=lcov",
     "precoverage": "npm test",
     "coverage": "open-cli coverage/index.html",
     "lint": "npm run prettier:docs:check && npm run eslint && npm run monorepo:check",
@@ -61,27 +61,27 @@
     "posttest": "npm run lint"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
-    "@types/mocha": "^8.2.2",
-    "@typescript-eslint/eslint-plugin": "^4.26.0",
-    "@typescript-eslint/parser": "^4.26.0",
-    "coveralls": "^3.1.0",
+    "@commitlint/cli": "^13.2.0",
+    "@commitlint/config-conventional": "^13.2.0",
+    "@types/mocha": "^9.0.0",
+    "@typescript-eslint/eslint-plugin": "^4.32.0",
+    "@typescript-eslint/parser": "^4.32.0",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^7.28.0",
+    "eslint": "^7.32.0",
     "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-eslint-plugin": "^3.0.3",
+    "eslint-plugin-eslint-plugin": "^3.6.1",
     "eslint-plugin-mocha": "^9.0.0",
-    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "fs-extra": "^10.0.0",
-    "husky": "^6.0.0",
+    "husky": "^7.0.2",
     "lerna": "^4.0.0",
-    "lint-staged": "^11.0.0",
-    "markdown-table": "^3.0.0",
+    "lint-staged": "^11.1.2",
+    "markdown-table": "^3.0.1",
     "open-cli": "^6.0.1",
-    "prettier": "^2.3.1",
-    "typescript": "~4.3.2"
+    "prettier": "^2.4.1",
+    "renovate": "^27.25.1",
+    "typescript": "~4.4.3"
   },
   "config": {
     "commitizen": {

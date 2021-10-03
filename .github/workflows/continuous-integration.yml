@@ -9,6 +9,8 @@ on:
   schedule:
     - cron: '0 2 * * 1' # At 02:00 on Monday
 
+permissions: {}
+
 env:
   NODE_OPTIONS: --max-old-space-size=4096
 
@@ -37,6 +39,8 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+      - name: Update NPM
+        run: npm install -g npm
       - name: Bootstrap project
         run: |
           npm ci --ignore-scripts
@@ -48,6 +52,25 @@ jobs:
       - uses: Yuri6037/Action-FakeTTY@v1.1
       - name: Run tests
         run: faketty npm test --ignore-scripts
+      - name: Generate coverage report
+        run: npm run coverage:ci --ignore-scripts
+      - name: Publish coverage report to Coveralls
+        uses: coverallsapp/github-action@master
+        with:
+          flag-name: run-${{ matrix.os }}-node@${{ matrix.node-version }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          parallel: true
+
+  posttest:
+    name: Post-Test
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Coveralls finished
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        parallel-finished: true
 
   test-benchmark:
     name: Test Benchmark
@@ -103,6 +126,21 @@ jobs:
           npx lerna bootstrap --scope "@loopback/monorepo" --include-dependencies
       - name: Verify commit linting
         run: npx commitlint --from origin/master --to HEAD --verbose
+
+  ci-lint:
+    name: CI Lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - name: Install monorepo tools
+        run: npm ci --ignore-scripts
+      - name: Validate Renovate config
+        run: npx --no-install renovate-config-validator
 
   verify-docs:
     name: Verify Docs

@@ -1,7 +1,7 @@
 {
   "name": "@loopback/core",
   "description": "Define and implement core constructs such as Application and Component",
-  "version": "2.16.0",
+  "version": "2.17.0",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "copyright.owner": "IBM Corp.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
     "directory": "packages/core"
   },
   "engines": {
@@ -35,15 +35,15 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@loopback/context": "^3.16.0",
-    "debug": "^4.3.1",
-    "tslib": "^2.2.0"
+    "@loopback/context": "^3.17.2",
+    "debug": "^4.3.2",
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@loopback/build": "^6.4.0",
-    "@loopback/eslint-config": "^10.2.0",
-    "@loopback/testlab": "^3.4.0",
-    "@types/debug": "^4.1.5",
+    "@loopback/build": "^7.0.1",
+    "@loopback/eslint-config": "^11.0.1",
+    "@loopback/testlab": "^3.4.3",
+    "@types/debug": "^4.1.7",
     "@types/node": "^10.17.60"
   }
 }

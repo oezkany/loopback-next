@@ -16,6 +16,7 @@ import {
 import {expect} from '@loopback/testlab';
 import {
   buildModelCacheKey,
+  getJsonSchemaRef,
   getNavigationalPropertyForRelation,
   JsonSchema,
   metaToJsonProperty,
@@ -333,6 +334,49 @@ describe('build-schema', () => {
       });
     });
 
+    it('includeRelations is not propagated to properties decorated with @property()', () => {
+      @model()
+      class FooModel extends Entity {
+        @property({
+          type: 'string',
+        })
+        xyz?: string;
+      }
+
+      @model()
+      class BarModel extends Entity {
+        @property({
+          type: 'string',
+        })
+        name?: string;
+
+        @property()
+        foo?: FooModel;
+
+        @hasMany(() => FooModel)
+        relatedFoo?: FooModel;
+      }
+
+      // include relations
+      const schema = modelToJsonSchema(BarModel, {
+        includeRelations: true,
+      });
+      expect(schema.properties).to.containEql({
+        name: {
+          type: 'string',
+        },
+        // Decorated with @property() Model should NOT be 'WithRelations'
+        foo: {
+          $ref: '#/definitions/FooModel',
+        },
+        // Decorated with @hasMany() Model should be 'WithRelations'
+        relatedFoo: {
+          type: 'array',
+          items: {$ref: '#/definitions/FooModelWithRelations'},
+        },
+      });
+    });
+
     it('property definition does not inherit title from model', () => {
       @model()
       class Child extends Entity {
@@ -602,6 +646,46 @@ describe('build-schema', () => {
     it('includes custom title', () => {
       const key = buildModelCacheKey({title: 'NewProduct', partial: true});
       expect(key).to.equal('modelNewProductPartial');
+    });
+  });
+
+  describe('getJsonSchemaRef', () => {
+    @model()
+    class Base {
+      @property()
+      name: string;
+    }
+
+    @model()
+    class Sub extends Base {
+      @property()
+      age: number;
+    }
+    it('allows subclasses', () => {
+      const base = getJsonSchemaRef(Base);
+      expect(base).to.eql({
+        $ref: '#/definitions/Base',
+        definitions: {
+          Base: {
+            title: 'Base',
+            type: 'object',
+            properties: {name: {type: 'string'}},
+            additionalProperties: false,
+          },
+        },
+      });
+      const sub = getJsonSchemaRef(Sub);
+      expect(sub).to.eql({
+        $ref: '#/definitions/Sub',
+        definitions: {
+          Sub: {
+            title: 'Sub',
+            type: 'object',
+            properties: {name: {type: 'string'}, age: {type: 'number'}},
+            additionalProperties: false,
+          },
+        },
+      });
     });
   });
 });

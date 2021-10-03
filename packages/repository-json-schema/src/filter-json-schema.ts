@@ -47,6 +47,7 @@ export function getScopeFilterJsonSchemaFor(
   class EmptyModel extends Model {}
 
   const schema: JsonSchema = {
+    type: 'object',
     ...getFilterJsonSchemaFor(EmptyModel, {
       setTitle: false,
     }),
@@ -126,6 +127,7 @@ export function getFilterJsonSchemaFor(
   }
 
   const schema: JsonSchema = {
+    type: 'object',
     ...(options.setTitle !== false && {
       title: `${modelCtor.modelName}.Filter`,
     }),
@@ -186,7 +188,7 @@ export function getWhereJsonSchemaFor(
     }),
     type: 'object',
     // TODO(bajtos) enumerate "model" properties and operators like "and"
-    // See https://github.com/strongloop/loopback-next/issues/1748
+    // See https://github.com/loopbackio/loopback-next/issues/1748
     additionalProperties: true,
   };
 

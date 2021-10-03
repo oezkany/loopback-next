@@ -144,7 +144,7 @@ lang: en
 title: 'API docs: index'
 keywords: LoopBack 4.0, LoopBack 4, Node.js, TypeScript, OpenAPI
 sidebar: lb4_sidebar
-editurl: https://github.com/strongloop/loopback-next
+editurl: https://github.com/loopbackio/loopback-next
 permalink: /doc/en/lb4/apidocs.index.html
 ---`);
 
@@ -164,7 +164,7 @@ permalink: /doc/en/lb4/apidocs.index.html
     );
     expect(constructorDoc).to.not.match(/\.\(constructor\)\.md/);
     expect(constructorDoc).to.match(
-      /editurl\: https\:\/\/github\.com\/strongloop\/loopback\-next\/tree\/master\/packages\/pkg1/,
+      /editurl\: https\:\/\/github\.com\/loopbackio\/loopback\-next\/tree\/master\/packages\/pkg1/,
     );
 
     const pkgDoc = await fs.readFile(
@@ -172,10 +172,10 @@ permalink: /doc/en/lb4/apidocs.index.html
       'utf-8',
     );
     expect(pkgDoc).to.match(
-      /\[pkg1\]\(https\:\/\/github\.com\/strongloop\/loopback\-next\/tree\/master\/packages\/pkg1\)/,
+      /\[pkg1\]\(https\:\/\/github\.com\/loopbackio\/loopback\-next\/tree\/master\/packages\/pkg1\)/,
     );
     expect(pkgDoc).to.match(
-      /editurl\: https\:\/\/github\.com\/strongloop\/loopback\-next\/tree\/master\/packages\/pkg1/,
+      /editurl\: https\:\/\/github\.com\/loopbackio\/loopback\-next\/tree\/master\/packages\/pkg1/,
     );
   });
 });

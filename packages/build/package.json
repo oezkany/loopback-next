@@ -1,7 +1,7 @@
 {
   "name": "@loopback/build",
   "description": "A set of common scripts and default configurations to build LoopBack 4 or other TypeScript modules",
-  "version": "6.4.0",
+  "version": "7.0.1",
   "license": "MIT",
   "bin": {
     "lb-tsc": "./bin/compile-package.js",
@@ -16,7 +16,7 @@
   "copyright.owner": "IBM Corp.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
     "directory": "packages/build"
   },
   "engines": {
@@ -30,20 +30,20 @@
     "access": "public"
   },
   "dependencies": {
-    "@loopback/eslint-config": "^10.2.0",
-    "@types/mocha": "^8.2.2",
+    "@loopback/eslint-config": "^11.0.1",
+    "@types/mocha": "^9.0.0",
     "@types/node": "^10.17.60",
     "cross-spawn": "^7.0.3",
-    "debug": "^4.3.1",
-    "eslint": "^7.28.0",
+    "debug": "^4.3.2",
+    "eslint": "^7.32.0",
     "fs-extra": "^10.0.0",
-    "glob": "^7.1.7",
+    "glob": "^7.2.0",
     "lodash": "^4.17.21",
-    "mocha": "^8.4.0",
+    "mocha": "^9.1.2",
     "nyc": "^15.1.0",
-    "prettier": "^2.3.1",
+    "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "source-map-support": "^0.5.19",
-    "typescript": "~4.3.2"
+    "source-map-support": "^0.5.20",
+    "typescript": "~4.4.3"
   }
 }

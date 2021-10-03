@@ -1,7 +1,7 @@
 {
   "name": "@loopback/mock-oauth2-provider",
   "description": "An internal application to mock the OAuth2 authorization flow login with a social app like facebook, google etc",
-  "version": "0.3.0",
+  "version": "0.3.3",
   "license": "MIT",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -9,7 +9,7 @@
   "copyright.owner": "IBM Corp.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/strongloop/loopback-next.git",
+    "url": "https://github.com/loopbackio/loopback-next.git",
     "directory": "fixtures/mock-oauth2-provider"
   },
   "engines": {
@@ -35,22 +35,22 @@
     "!*/__tests__"
   ],
   "dependencies": {
-    "@types/body-parser": "^1.19.0",
-    "@types/express": "^4.17.12",
-    "@types/jsonwebtoken": "^8.5.1",
-    "@types/lodash": "^4.14.170",
+    "@types/body-parser": "^1.19.1",
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.5",
+    "@types/lodash": "^4.14.175",
     "@types/node": "^10.17.60",
-    "axios": "^0.21.0",
+    "axios": "^0.21.4",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "form-data": "^4.0.0",
     "jsonwebtoken": "^8.5.1",
     "lodash": "^4.17.21",
-    "tslib": "^2.2.0"
+    "tslib": "^2.3.1"
   },
   "devDependencies": {
-    "@loopback/build": "^6.4.0",
-    "@loopback/eslint-config": "^10.2.0",
-    "@loopback/testlab": "^3.4.0"
+    "@loopback/build": "^7.0.1",
+    "@loopback/eslint-config": "^11.0.1",
+    "@loopback/testlab": "^3.4.3"
   }
 }
